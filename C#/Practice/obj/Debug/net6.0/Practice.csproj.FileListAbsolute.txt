@@ -1,0 +1,15 @@
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\bin\Debug\net6.0\Practice.exe
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\bin\Debug\net6.0\Practice.deps.json
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\bin\Debug\net6.0\Practice.runtimeconfig.json
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\bin\Debug\net6.0\Practice.dll
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\bin\Debug\net6.0\Practice.pdb
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.csproj.AssemblyReference.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.AssemblyInfoInputs.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.AssemblyInfo.cs
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.csproj.CoreCompileInputs.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.dll
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\refint\Practice.dll
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.pdb
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\Practice.genruntimeconfig.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\Practice\obj\Debug\net6.0\ref\Practice.dll

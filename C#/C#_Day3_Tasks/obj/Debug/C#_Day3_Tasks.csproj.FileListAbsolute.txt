@@ -1,0 +1,8 @@
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\bin\Debug\C#_Day3_Tasks.exe.config
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\bin\Debug\C#_Day3_Tasks.exe
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\bin\Debug\C#_Day3_Tasks.pdb
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\obj\Debug\C#_Day3_Tasks.csproj.AssemblyReference.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\obj\Debug\C#_Day3_Tasks.csproj.SuggestedBindingRedirects.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\obj\Debug\C#_Day3_Tasks.csproj.CoreCompileInputs.cache
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\obj\Debug\C#_Day3_Tasks.exe
+C:\Tasks\Trainee2023\Trainee2023\Rahul Yadav\C#\C#_Day3_Tasks\obj\Debug\C#_Day3_Tasks.pdb
