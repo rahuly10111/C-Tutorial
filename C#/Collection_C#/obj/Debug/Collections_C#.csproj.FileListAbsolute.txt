@@ -1,0 +1,8 @@
+C:\C Sharp\C#\Collection_C#\bin\Debug\Collection_C#.exe.config
+C:\C Sharp\C#\Collection_C#\bin\Debug\Collection_C#.exe
+C:\C Sharp\C#\Collection_C#\bin\Debug\Collection_C#.pdb
+C:\C Sharp\C#\Collection_C#\obj\Debug\Collections_C#.csproj.AssemblyReference.cache
+C:\C Sharp\C#\Collection_C#\obj\Debug\Collections_C#.csproj.SuggestedBindingRedirects.cache
+C:\C Sharp\C#\Collection_C#\obj\Debug\Collections_C#.csproj.CoreCompileInputs.cache
+C:\C Sharp\C#\Collection_C#\obj\Debug\Collection_C#.exe
+C:\C Sharp\C#\Collection_C#\obj\Debug\Collection_C#.pdb

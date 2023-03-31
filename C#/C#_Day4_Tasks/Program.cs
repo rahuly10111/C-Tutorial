@@ -10,20 +10,24 @@ namespace C__Day4_Tasks
     {
         static void Main(string[] args)
         {
+
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.Clear();
             try
             {
                 var isout = false;
                 do {
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.Write("Enter the Tasks Number : ");
                     int taskNumber=Convert.ToInt32(Console.ReadLine()); 
                     switch (taskNumber) {
                         case 1:
-                            CommonMethod.calculater();
+                            CommonMethod.Calculater();
                             break;
                         case 2:
                             CommonMethod.ClassOfStudent();
                             break;
-                        default: Console.WriteLine("Please Enter 1 or @ to view the Tasks");
+                        default: Console.WriteLine("Please Enter 1 or 2 to view the Tasks");
                             break;
                     
                     }
