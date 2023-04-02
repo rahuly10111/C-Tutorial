@@ -1,29 +1,38 @@
 [
-    {
-        "employeeFirstName": "HYFJg",
-        "employeeLastName": "JGHG",
-        "employeeGender": "male",
-        "employeeEmailId": "hdfghf",
-        "employeePhoneNumber": 6456546,
-        "employeeDesignation": 2,
-        "employeeSalary": "6565465464"
-    },
-    {
-        "employeeFirstName": "HYFJg",
-        "employeeLastName": "JGHG",
-        "employeeGender": "male",
-        "employeeEmailId": "hdfghf",
-        "employeePhoneNumber": 6456546,
-        "employeeDesignation": 2,
-        "employeeSalary": "6565465464"
-    },
-    {
-        "employeeFirstName": "Jgh",
-        "employeeLastName": "HJG",
-        "employeeGender": "male",
-        "employeeEmailId": "ugig",
-        "employeePhoneNumber": 756756,
-        "employeeDesignation": 2,
-        "employeeSalary": "5345345"
-    }
+  {
+    "employeeFirstName": "TWGT",
+    "employeeLastName": "GRGer",
+    "employeeGender": "male",
+    "employeeEmailId": "a@gmail.com",
+    "employeePhoneNumber": "9427422828",
+    "employeeDesignation": "Name1",
+    "employeeSalary": "1121323"
+  },
+  {
+    "employeeFirstName": "Rahul",
+    "employeeLastName": "Yadav",
+    "employeeGender": "male",
+    "employeeEmailId": "abc@gmail.com",
+    "employeePhoneNumber": "8784228028",
+    "employeeDesignation": "Name1",
+    "employeeSalary": "232343"
+  },
+  {
+    "employeeFirstName": "ERGe",
+    "employeeLastName": "RGWERg",
+    "employeeGender": "male",
+    "employeeEmailId": "a@gmail.com",
+    "employeePhoneNumber": "9427422808",
+    "employeeDesignation": "Name2",
+    "employeeSalary": "2414435"
+  },
+  {
+    "employeeFirstName": "Raj",
+    "employeeLastName": "DH",
+    "employeeGender": "male",
+    "employeeEmailId": "a@gmail.com",
+    "employeePhoneNumber": "9427422828",
+    "employeeDesignation": "qa",
+    "employeeSalary": "324355"
+  }
 ]

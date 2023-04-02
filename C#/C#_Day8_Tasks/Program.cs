@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace C__Day8_Tasks
             List<employeeRecord> employeeDetailList = new List<employeeRecord>();
 
             if(File.Exists(fileDetail))
-            {
+            { 
                 var jsonString = File.ReadAllText("employeeRecordDetail.json");
                 employeeDetailList = JsonConvert.DeserializeObject<List<employeeRecord>>(jsonString);
             }
@@ -69,17 +70,23 @@ namespace C__Day8_Tasks
             public string employeeLastName;
             public string employeeGender;
             public string employeeEmailId;
-            public int employeePhoneNumber;
-            public int employeeDesignation;
+            public string employeePhoneNumber;
+            public string employeeDesignation;
             public string employeeSalary;
         }
 
         public enum employeeDesignation
         {
-            Developer=1,
-            QA=2,
-            PM=3,
-            BA=4
+            [Description("Developer")]
+            developer,
+            [Description("QA")]
+            qa,
+            [Description("PM")]
+            pm,
+            [Description("BA")]
+            ba
+
+
         }
 
         public static void addemployeeDetails(string fileDetail, List<employeeRecord> employeeDetailList)
@@ -103,35 +110,42 @@ namespace C__Day8_Tasks
                 Console.Write(" Enter Your Gender : ");
                 employeeRecordDetail.employeeGender = Convert.ToString(Console.ReadLine());
             } while(!GenderValidation(employeeRecordDetail.employeeGender));
-           
 
 
-            Console.Write(" Enter Your Email Id : ");
-            employeeRecordDetail.employeeEmailId = Convert.ToString(Console.ReadLine());
-            EmailValidation(employeeRecordDetail.employeeEmailId);
+            do
+            {
+                Console.Write(" Enter Your Email Id : ");
+                employeeRecordDetail.employeeEmailId = Convert.ToString(Console.ReadLine());
+            }
+            while(!EmailValidation(employeeRecordDetail.employeeEmailId));
+
+            do
+            {
+                Console.Write(" Enter Your Phone Number : ");
+                employeeRecordDetail.employeePhoneNumber = Convert.ToString(Console.ReadLine());
+            }
+            while (!phonenoValidation(employeeRecordDetail.employeePhoneNumber));
 
 
 
 
-            Console.Write(" Enter Your Phone Number : ");
-            employeeRecordDetail.employeePhoneNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(" \n Enter 1 for De \n Enter 2 for QA  \n Enter 3 for PM \n Enter 4 for BA");
+            Console.WriteLine(" \n Enter 1 for Developer \n Enter 2 for QA  \n Enter 3 for PM \n Enter 4 for BA");
             Console.Write(" Enter the Number Above Message : ");
-            var userinput=Convert.ToInt16(Console.ReadLine());
+            var userinput=Convert.ToString(Console.ReadLine());
             switch (userinput)
             {
-                case 1:
-                    employeeRecordDetail.employeeDesignation = (int)employeeDesignation.Developer;
+                case "1":
+                    employeeRecordDetail.employeeDesignation = Convert.ToString( employeeDesignation.developer);
                     break;
-                case 2:
-                    employeeRecordDetail.employeeDesignation = (int)employeeDesignation.QA;
+                case "2":
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.qa);
                     break;
-                case 3:
-                    employeeRecordDetail.employeeDesignation = (int)employeeDesignation.PM;
+                case "3":
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.pm);
                     break;
-                case 4:
-                    employeeRecordDetail.employeeDesignation = (int)employeeDesignation.BA;
-                    break;
+                case "4":
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.ba);
+                    break;  
             }
 
             do
@@ -185,7 +199,7 @@ namespace C__Day8_Tasks
             if (string.IsNullOrEmpty(salaryvalidation))
                 return false;
 
-            Regex regex = new Regex(@"(1000[0-9]|100[1-9][0-9]|10[1-9][0-9]{2}|1[1-9][0-9]{3}|[2-4][0-9]{4}|5000)",
+            Regex regex = new Regex(@"(1000[0-9]|100[1-9][0-9]|10[1-9][0-9]{2}|1[1-9][0-9]{3}|[2-4][0-9]{4}|50000)",
                   RegexOptions.CultureInvariant | RegexOptions.Singleline);
             return regex.IsMatch(salaryvalidation);
 
@@ -203,21 +217,33 @@ namespace C__Day8_Tasks
 
         }
 
-        public static string fileDataRead()
+        public static bool phonenoValidation(string emailvalidation)
+        {
+
+            if (string.IsNullOrEmpty(emailvalidation))
+                return false;
+
+            Regex regex = new Regex(@"^[6789]\d{9}$",
+                  RegexOptions.CultureInvariant | RegexOptions.Singleline);
+            return regex.IsMatch(emailvalidation);
+
+        }
+
+        public static void fileDataRead()
         {
             if (File.Exists("employeeRecordDetail.json"))
             {
                 var jsonString = File.ReadAllText("employeeRecordDetail.json");
                 var employees = JsonConvert.DeserializeObject<List<employeeRecord>>(jsonString);
                 foreach (var employee in employees) {
-                    
-                    return $" --> Your Name is {employee.employeeFirstName} , You are {employee.employeeLastName} Year Old and You Live in {employee.employeeGender} Which has Population Of {employee.employeeEmailId} .";
+
+                    Console.WriteLine($"\n Employee Name: {employee.employeeFirstName} {employee.employeeLastName},\n Person Gender : {employee.employeeGender},\n Employee Designation : {employee.employeeDesignation}, \n Employee Email : {employee.employeeEmailId}, \n Employee Phone : {employee.employeePhoneNumber} \n");
                 }
-                return "";
+                
             }
             else
             {
-                return $" File Don't Exists ";
+                Console.WriteLine( $" File Don't Exists ");
             }
         }
 
