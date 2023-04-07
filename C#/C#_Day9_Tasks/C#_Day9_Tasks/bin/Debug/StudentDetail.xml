@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudentEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <StudentEntity>
+        <studentFirstName>GRE</studentFirstName>
+        <studentLastName>GRDE</studentLastName>
+        <studentEmailId>a@gmail.com</studentEmailId>
+        <studentPhoneNo>OTQyNzg2NDIyOA==</studentPhoneNo>
+        <studentAddress>few</studentAddress>
+    </StudentEntity>
+    <StudentEntity>
+        <studentFirstName>GERg</studentFirstName>
+        <studentLastName>RGREg</studentLastName>
+        <studentEmailId>a@gmail.com</studentEmailId>
+        <studentPhoneNo>OTQyNzg2NDIyOA==</studentPhoneNo>
+        <studentAddress>egf</studentAddress>
+    </StudentEntity>
+    <StudentEntity>
+        <studentFirstName>GREG</studentFirstName>
+        <studentLastName>DFGD</studentLastName>
+        <studentEmailId>a@gmail.com</studentEmailId>
+        <studentPhoneNo>OTQyNzg2NDIyOA==</studentPhoneNo>
+        <studentAddress>ewrfew</studentAddress>
+    </StudentEntity>
+</ArrayOfStudentEntity>

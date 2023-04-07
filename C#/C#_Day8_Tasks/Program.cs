@@ -77,14 +77,14 @@ namespace C__Day8_Tasks
 
         public enum employeeDesignation
         {
-            [Description("Developer")]
-            developer,
-            [Description("QA")]
-            qa,
-            [Description("PM")]
-            pm,
-            [Description("BA")]
-            ba
+            [Description("developer")]
+            Developer,
+            [Description("qa")]
+            QA,
+            [Description("pm")]
+            PM,
+            [Description("ba")]
+            BA
 
 
         }
@@ -131,20 +131,20 @@ namespace C__Day8_Tasks
 
             Console.WriteLine(" \n Enter 1 for Developer \n Enter 2 for QA  \n Enter 3 for PM \n Enter 4 for BA");
             Console.Write(" Enter the Number Above Message : ");
-            var userinput=Convert.ToString(Console.ReadLine());
+            var userinput=Convert.ToInt16(Console.ReadLine());
             switch (userinput)
             {
-                case "1":
-                    employeeRecordDetail.employeeDesignation = Convert.ToString( employeeDesignation.developer);
+                case 1:
+                    employeeRecordDetail.employeeDesignation = Convert.ToString( employeeDesignation.Developer);
                     break;
-                case "2":
-                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.qa);
+                case 2:
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.QA);
                     break;
-                case "3":
-                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.pm);
+                case 3:
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.PM);
                     break;
-                case "4":
-                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.ba);
+                case 4:
+                    employeeRecordDetail.employeeDesignation = Convert.ToString(employeeDesignation.BA);
                     break;  
             }
 
@@ -166,7 +166,6 @@ namespace C__Day8_Tasks
             {
                 writer.WriteLine(JsonConvertFile);
             }
-            //File.AppendAllText(fileDetail, JsonConvertFile);
         }
 
         public static bool NameValidation(string namevalidation)
@@ -237,7 +236,7 @@ namespace C__Day8_Tasks
                 var employees = JsonConvert.DeserializeObject<List<employeeRecord>>(jsonString);
                 foreach (var employee in employees) {
 
-                    Console.WriteLine($"\n Employee Name: {employee.employeeFirstName} {employee.employeeLastName},\n Person Gender : {employee.employeeGender},\n Employee Designation : {employee.employeeDesignation}, \n Employee Email : {employee.employeeEmailId}, \n Employee Phone : {employee.employeePhoneNumber} \n");
+                    Console.WriteLine($"\n Employee First Name: {employee.employeeFirstName} , \n Employee Last Name:  {employee.employeeLastName},\n Person Gender : {employee.employeeGender},\n Employee Designation : {employee.employeeDesignation}, \n Employee Email : {employee.employeeEmailId}, \n Employee Phone : {employee.employeePhoneNumber} \n");
                 }
                 
             }

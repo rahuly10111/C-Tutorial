@@ -6,3 +6,11 @@ C:\C Sharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.csproj.SuggestedBindingRedir
 C:\C Sharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.csproj.CoreCompileInputs.cache
 C:\C Sharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.exe
 C:\C Sharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.pdb
+C:\CSharp\C#\C#_Day7_Tasks\bin\Debug\C#_Day7_Tasks.exe.config
+C:\CSharp\C#\C#_Day7_Tasks\bin\Debug\C#_Day7_Tasks.exe
+C:\CSharp\C#\C#_Day7_Tasks\bin\Debug\C#_Day7_Tasks.pdb
+C:\CSharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.csproj.AssemblyReference.cache
+C:\CSharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.csproj.SuggestedBindingRedirects.cache
+C:\CSharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.csproj.CoreCompileInputs.cache
+C:\CSharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.exe
+C:\CSharp\C#\C#_Day7_Tasks\obj\Debug\C#_Day7_Tasks.pdb

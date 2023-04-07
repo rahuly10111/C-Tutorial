@@ -1,0 +1,11 @@
+C:\C Sharp\C#\C#_Exam\bin\Debug\C#_Exam.exe.config
+C:\C Sharp\C#\C#_Exam\bin\Debug\C#_Exam.exe
+C:\C Sharp\C#\C#_Exam\bin\Debug\C#_Exam.pdb
+C:\C Sharp\C#\C#_Exam\bin\Debug\Newtonsoft.Json.dll
+C:\C Sharp\C#\C#_Exam\bin\Debug\Newtonsoft.Json.xml
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.AssemblyReference.cache
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.SuggestedBindingRedirects.cache
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CoreCompileInputs.cache
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CopyComplete
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.exe
+C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.pdb
