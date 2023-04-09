@@ -9,3 +9,14 @@ C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CoreCompileInputs.cache
 C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CopyComplete
 C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.exe
 C:\C Sharp\C#\C#_Exam\obj\Debug\C#_Exam.pdb
+D:\cSharp_git\C#\C#_Exam\bin\Debug\C#_Exam.exe.config
+D:\cSharp_git\C#\C#_Exam\bin\Debug\C#_Exam.exe
+D:\cSharp_git\C#\C#_Exam\bin\Debug\C#_Exam.pdb
+D:\cSharp_git\C#\C#_Exam\bin\Debug\Newtonsoft.Json.dll
+D:\cSharp_git\C#\C#_Exam\bin\Debug\Newtonsoft.Json.xml
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.AssemblyReference.cache
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.SuggestedBindingRedirects.cache
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CoreCompileInputs.cache
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CopyComplete
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.exe
+D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.pdb
