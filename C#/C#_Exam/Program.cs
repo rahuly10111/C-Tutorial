@@ -1,15 +1,18 @@
 ﻿using FluentAssertions.Common;
+using FluentAssertions.Equivalency;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static C__Exam.Program;
 
 namespace C__Exam
 {
@@ -19,15 +22,13 @@ namespace C__Exam
 
         static void Main(string[] args)
         {
-            employeeData employeeRecordDetail = new employeeData();
-            string fileDetail = "EmployeeData_TodayDate.json";
-            SortedList mySortedList = new SortedList();
-            List<employeeData> employeeDetailList = new List<employeeData>();
+            string fileDetail = ConfigurationManager.AppSettings["file"]; ;
+            List<EmployeeData> employeeDetailList = new List<EmployeeData>();
 
             if (File.Exists(fileDetail))
             {
-                var jsonString = File.ReadAllText("EmployeeData_TodayDate.json");
-                employeeDetailList = JsonConvert.DeserializeObject<List<employeeData>>(jsonString);
+                var jsonString = File.ReadAllText(fileDetail);
+                employeeDetailList = JsonConvert.DeserializeObject<List<EmployeeData>>(jsonString);
 
             }
             var isout = false;
@@ -41,19 +42,23 @@ namespace C__Exam
 
                 {
                     case 1:
-                        addEmployeeDetail(fileDetail, mySortedList, employeeDetailList);
+                        AddEmployeeDetail(fileDetail, employeeDetailList);
                         break;
                     case 2:
-                        fileDataRead();
+                        FileDataRead();
+                        RemoveEmployee(employeeDetailList);
+                        //  removeEmployee(employeeDetailList);
                         break;
+
+
 
                     default:
                         Console.WriteLine(" Only Type the Number as per Above Message ");
                         break;
                 }
-                Console.WriteLine("\n TO Continue Watching Features -- Press (y) \n");
+                Console.WriteLine("\n TO Continue Watching Tasks -- Press (3) \n");
                 var input = Console.ReadLine();
-                if (input.ToLower() == "y")
+                if (input == "3")
                 {
                     isout = true;
                 }
@@ -67,11 +72,11 @@ namespace C__Exam
         }
 
 
-        public class employeeData
+        public class EmployeeData
         {
-            public string employeeId;
+            public int employeeId;
             public string employeeName;
-            public DateTime employeeDOB;
+            public string employeeDOB;
             public string employeeGender;
             public string employeeDesignation;
             public string employeeState;
@@ -83,10 +88,10 @@ namespace C__Exam
             public double employeeTotalExperience;
             public string employeeRemark;
             public string employeeDepartMent;
-            public string employeeMonthlySalary;
+            public int employeeMonthlySalary;
         }
 
-        public enum employeeDepartMentenum
+        public enum EmployeeDepartMentenum
         {
             [Description("Development")]
             Development,
@@ -104,18 +109,34 @@ namespace C__Exam
         }
 
 
-        public static void addEmployeeDetail(string fileDetail, SortedList mylist, List<employeeData> employeeDetailList)
+        public static void AddEmployeeDetail(string fileDetail, List<EmployeeData> employeeDetailList)
         {
-            employeeData employeeRecordDetail = new employeeData();
+            EmployeeData employeeRecordDetail = new EmployeeData();
 
             Console.WriteLine(" ---->  Enter Your Details  <---- ");
 
-            do
+            bool checkStudentID = true;
+            while (checkStudentID)
             {
-                Console.Write(" Enter Employee Id :  ");
-                employeeRecordDetail.employeeId = Convert.ToString(Console.ReadLine());
-            } while (!IdValidation(employeeRecordDetail.employeeId));
+                try
+                {
+                    Console.Write(" Enter Employee Id :  ");
+                    employeeRecordDetail.employeeId = Convert.ToInt16(Console.ReadLine().Trim());
+                    if (UserId(employeeRecordDetail.employeeId) == true)
+                    {
+                        checkStudentID = true;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
+            }
 
             do
             {
@@ -123,16 +144,45 @@ namespace C__Exam
                 employeeRecordDetail.employeeName = Convert.ToString(Console.ReadLine());
             } while (!NameValidation(employeeRecordDetail.employeeName));
 
+            bool birthDate = true;
+            while (birthDate)
+            {
+                Console.Write(" Enter Employee Date Of Birth :  ");
+                string dateofbirth = Convert.ToString(Console.ReadLine());
 
-            Console.Write(" Enter Employee Date Of Birth :  ");
-            employeeRecordDetail.employeeDOB = Convert.ToDateTime(Console.ReadLine());
+                try
+                {
+                    DateTime getBirthDate = Convert.ToDateTime(dateofbirth);
+                    employeeRecordDetail.employeeDOB = DateExtensions.DateFormate(getBirthDate);
+                    //  Console.WriteLine("Your Date of Joining - " + employeeRecordDetail.employeeDOB);
+
+
+                    birthDate = false;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid Date Format.");
+                    continue;
+                }
+            }
+
 
             Console.WriteLine(" Please Type M for Male and F for Female ");
-            do
+            Console.Write(" Enter Employee Gender : ");
+            string gender = Convert.ToString(Console.ReadLine().ToLower().Trim());
+            switch (gender)
             {
-                Console.Write(" Enter Employee Gender : ");
-                employeeRecordDetail.employeeGender = Convert.ToString(Console.ReadLine());
-            } while (!GenderValidation(employeeRecordDetail.employeeGender));
+                case "m":
+                    employeeRecordDetail.employeeGender = "Male";
+                    break;
+                case "f":
+                    employeeRecordDetail.employeeGender = " Female ";
+                    break;
+                default:
+                    Console.WriteLine(" Kindly Type M for Male and F for Female ");
+                    break;
+            }
+
 
             do
             {
@@ -163,7 +213,7 @@ namespace C__Exam
             {
                 Console.Write(" Enter Employee Phone Number : ");
                 employeeRecordDetail.employeePhoneNo = Convert.ToString(Console.ReadLine());
-            } while (!phonenoValidation(employeeRecordDetail.employeePhoneNo));
+            } while (!PhonenoValidation(employeeRecordDetail.employeePhoneNo));
 
 
             do
@@ -177,15 +227,19 @@ namespace C__Exam
             bool joinDate = true;
             while (joinDate)
             {
-                Console.Write("Enter Date Of Joining : ");
+                Console.Write(" Enter Date Of Joining : ");
                 string dateOfJoin = Console.ReadLine();
                 try
                 {
                     DateTime getJoinDate = Convert.ToDateTime(dateOfJoin);
-                    employeeRecordDetail.employeeDateOfJoining = DateTimeExtensions.DateFormate(getJoinDate);
-                    Console.WriteLine("Your Date of Joining - " + employeeRecordDetail.employeeDateOfJoining);
+                    employeeRecordDetail.employeeDateOfJoining = DateExtensions.DateFormate(getJoinDate);
+                    // Console.WriteLine("Your Date of Joining - " + employeeRecordDetail.employeeDateOfJoining);
+                    DateTime datestring = Convert.ToDateTime(employeeRecordDetail.employeeDateOfJoining);
+                    DateTime now = DateTime.Now;
+                    var datedifference = Convert.ToInt32((now - datestring).TotalDays);
+                    var yeardifference = Convert.ToDecimal(datedifference / 365.2425);
+                    employeeRecordDetail.employeeTotalExperience = (double)System.Math.Round(yeardifference, 1);
 
-                   
                     joinDate = false;
                 }
                 catch (FormatException)
@@ -195,16 +249,6 @@ namespace C__Exam
                 }
             }
 
-
-
-            // Console.Write(" Enter Employee Date Of Joining : ");
-            // employeeRecordDetail.employeeDateOfJoining = Convert.ToDateTime(Console.ReadLine());
-            // DateTime now = DateTime.Now;
-
-            // var datedifference = Convert.ToInt32((now - employeeRecordDetail.employeeDateOfJoining).TotalDays);
-            //  var yeardifference = Convert.ToDecimal(datedifference / 365.2425);
-            //  employeeRecordDetail.employeeTotalExperience = (double)System.Math.Round(yeardifference, 1);
-            //  Console.WriteLine("  " + employeeRecordDetail.employeeName + " has " + employeeRecordDetail.employeeTotalExperience + " Years of Experiance ");
 
             do
             {
@@ -220,40 +264,45 @@ namespace C__Exam
             switch (userinput)
             {
                 case 1:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.Development);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.Development);
                     break;
                 case 2:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.Sales);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.Sales);
                     break;
                 case 3:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.QA);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.QA);
                     break;
                 case 4:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.Marketing);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.Marketing);
                     break;
                 case 5:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.HR);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.HR);
                     break;
                 case 6:
-                    employeeRecordDetail.employeeDepartMent = Convert.ToString(employeeDepartMentenum.SEO);
+                    employeeRecordDetail.employeeDepartMent = Convert.ToString(EmployeeDepartMentenum.SEO);
                     break;
                 default:
                     Console.WriteLine(" Enter Number As Per Above Message ");
                     break;
             }
 
-            do
+            try
             {
                 Console.Write(" Enter Employee Monthly Salary : ");
-                employeeRecordDetail.employeeMonthlySalary = Convert.ToString(Console.ReadLine());
-            } while (!SalaryValidation(employeeRecordDetail.employeeMonthlySalary));
+                employeeRecordDetail.employeeMonthlySalary = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            //mylist.Add(employeeRecordDetail.employeeMonthlySalary, (employeeRecordDetail.employeeId,employeeRecordDetail.employeeName, employeeRecordDetail.employeeDOB,employeeRecordDetail.employeeGender,employeeRecordDetail.employeeDesignation,employeeRecordDetail.employeeState,employeeRecordDetail.employeeCity,employeeRecordDetail.employeePostCode,employeeRecordDetail.employeePhoneNo,employeeRecordDetail.employeeEmail,employeeRecordDetail.employeeDateOfJoining,employeeRecordDetail.employeeTotalExperience,employeeRecordDetail.employeeRemark,employeeRecordDetail.employeeDepartMent,employeeRecordDetail.employeeMonthlySalary));
+
 
             employeeDetailList.Add(employeeRecordDetail);
-
+            employeeDetailList.Sort((x, y) => x.employeeMonthlySalary.CompareTo(y.employeeMonthlySalary));
+            string filePath = ConfigurationManager.AppSettings["file"];
             string JsonConvertFile = JsonConvert.SerializeObject(employeeDetailList);
-            using (StreamWriter writer = new StreamWriter(fileDetail))
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
                 writer.WriteLine(JsonConvertFile);
             }
@@ -262,17 +311,50 @@ namespace C__Exam
 
         }
 
-        public static bool IdValidation(string namevalidation)
+        public static void RemoveEmployee(List<EmployeeData> employeeDetailList)
         {
-            if (string.IsNullOrEmpty(namevalidation))
-                return false;
+            string filePath = ConfigurationManager.AppSettings["file"];
 
-            Regex regex = new Regex(@"^[\d]*$",
-                  RegexOptions.CultureInvariant | RegexOptions.Singleline);
-            return regex.IsMatch(namevalidation);
+            string jsonFile = "";
+            if (File.Exists(filePath))
+            {
+                jsonFile = File.ReadAllText(filePath);
 
+                var employeeList = JsonConvert.DeserializeObject<List<EmployeeData>>(jsonFile);
+                int userid = 0;
+                bool checkID = true;
+                while (checkID)
+                {
+                    try
+                    {
+                        Console.Write("Please Enter employee id : ");
+                        userid = Convert.ToInt32(Console.ReadLine());
+                        checkID = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+                EmployeeData employeeRemove = employeeDetailList.FirstOrDefault(e => e.employeeId == userid);
+                if (employeeRemove != null)
+                {
+                    employeeDetailList.Remove(employeeRemove);
+                    Console.WriteLine($"Employee Record Of Id {userid} Deleted");
+                }
+                else
+                {
+                    Console.WriteLine($"Employee with ID {userid} not found.");
+                }
+                string JsonConvertFile = JsonConvert.SerializeObject(employeeDetailList);
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.WriteLine(JsonConvertFile);
+                }
+
+            }
         }
-
         public static bool NameValidation(string namevalidation)
         {
             if (string.IsNullOrEmpty(namevalidation))
@@ -284,16 +366,6 @@ namespace C__Exam
 
         }
 
-        public static bool GenderValidation(string gendervalidation)
-        {
-            if (string.IsNullOrEmpty(gendervalidation))
-                return false;
-
-            Regex regex = new Regex(@"^M?$|^F?$|^m?$|^f?$",
-                  RegexOptions.CultureInvariant | RegexOptions.Singleline);
-            return regex.IsMatch(gendervalidation);
-
-        }
 
         public static bool EmailValidation(string emailvalidation)
         {
@@ -306,7 +378,7 @@ namespace C__Exam
 
         }
 
-        public static bool phonenoValidation(string phoneValidation)
+        public static bool PhonenoValidation(string phoneValidation)
         {
             if (string.IsNullOrEmpty(phoneValidation))
                 return false;
@@ -350,27 +422,37 @@ namespace C__Exam
 
         }
 
-        public static bool SalaryValidation(string salaryvalidation)
+
+
+        public static bool UserId(int userId)
         {
-            if (string.IsNullOrEmpty(salaryvalidation))
-                return false;
-
-            Regex regex = new Regex(@"(1000[0-9]|100[1-9][0-9]|10[1-9][0-9]{2}|1[1-9][0-9]{3}|[2-4][0-9]{4}|50000)",
-                  RegexOptions.CultureInvariant | RegexOptions.Singleline);
-            return regex.IsMatch(salaryvalidation);
-
-        }
-
-        public static void fileDataRead()
-        {
-            if (File.Exists("EmployeeData_TodayDate.json"))
+            string filePath = ConfigurationManager.AppSettings["file"];
+            if (File.Exists(filePath))
             {
-                var jsonString = File.ReadAllText("EmployeeData_TodayDate.json");
-                var employees = JsonConvert.DeserializeObject<List<employeeData>>(jsonString);
+                var jsonString = File.ReadAllText(filePath);
+                var employees = JsonConvert.DeserializeObject<List<EmployeeData>>(jsonString);
+                bool idExists = employees.Any(p => p.employeeId == userId);
+
+                if (idExists)
+                {
+                    Console.WriteLine($"Employee with ID {userId} already exists.");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public static void FileDataRead()
+        {
+            string filePath = ConfigurationManager.AppSettings["file"];
+            if (File.Exists(filePath))
+            {
+                var jsonString = File.ReadAllText(filePath);
+                var employees = JsonConvert.DeserializeObject<List<EmployeeData>>(jsonString);
                 foreach (var employee in employees)
                 {
 
-                    Console.WriteLine($"\n Employee First Name: {employee.employeeId} , \n Employee Last Name:  {employee.employeeName},\n Person Gender : {employee.employeeGender},\n Employee Designation : {employee.employeeDepartMent}, \n Employee Email : {employee.employeeEmail}, \n Employee Phone : {employee.employeeDOB} \n");
+                    Console.WriteLine($"\n Employee Id : {employee.employeeId} , \n Employee  Name:  {employee.employeeName},\n Person Gender : {employee.employeeGender},\n Employee Designation : {employee.employeeDepartMent}, \n Employee Email : {employee.employeeEmail}, \n Employee DOB : {employee.employeeDOB} \n");
                 }
 
             }
@@ -384,7 +466,7 @@ namespace C__Exam
 
     }
 
-    public static class DateTimeExtensions
+    public static class DateExtensions
     {
         public static string DateFormate(this DateTime date)
         {

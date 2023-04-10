@@ -1,0 +1,53 @@
+body{
+    font-family: 'mulish' !important;
+}
+
+.heading {
+  text-align: center;
+  background-color: lightgray;
+  height: 56px;
+}
+thead {
+  font-size: 18px;
+  background-color: gainsboro;
+}
+tbody{
+    font-size: 16px;
+}
+ input{
+    background-color: transparent !important;
+    border: 0px solid !important;
+}
+
+.red-color{
+    color: red;
+}
+.pink-color{
+    color: pink;
+}
+.orange-color{
+    color: orange;
+}
+.blue-color{
+    color: blue;
+}
+.green-color{
+    color: green;
+}
+.black-color{
+    color: black;
+}
+
+#eventTable{
+    width: 100%;
+    padding-top: 34px;
+}
+
+.dataTables_filter{
+    border: 1px solid black;
+
+}
+
+.dataTables_wrapper{
+    padding-top: 32px;
+} 

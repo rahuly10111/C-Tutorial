@@ -20,3 +20,21 @@ D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CoreCompileInputs.cache
 D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CopyComplete
 D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.exe
 D:\cSharp_git\C#\C#_Exam\obj\Debug\C#_Exam.pdb
+C:\CSharp Git\C#\C#_Exam\bin\Debug\C#_Exam.exe.config
+C:\CSharp Git\C#\C#_Exam\bin\Debug\C#_Exam.exe
+C:\CSharp Git\C#\C#_Exam\bin\Debug\C#_Exam.pdb
+C:\CSharp Git\C#\C#_Exam\bin\Debug\FluentAssertions.dll
+C:\CSharp Git\C#\C#_Exam\bin\Debug\Newtonsoft.Json.dll
+C:\CSharp Git\C#\C#_Exam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\CSharp Git\C#\C#_Exam\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\CSharp Git\C#\C#_Exam\bin\Debug\FluentAssertions.pdb
+C:\CSharp Git\C#\C#_Exam\bin\Debug\FluentAssertions.xml
+C:\CSharp Git\C#\C#_Exam\bin\Debug\Newtonsoft.Json.xml
+C:\CSharp Git\C#\C#_Exam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\CSharp Git\C#\C#_Exam\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.AssemblyReference.cache
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.SuggestedBindingRedirects.cache
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CoreCompileInputs.cache
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.csproj.CopyComplete
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.exe
+C:\CSharp Git\C#\C#_Exam\obj\Debug\C#_Exam.pdb
