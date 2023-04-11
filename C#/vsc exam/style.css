@@ -1,53 +1,71 @@
-body{
-    font-family: 'mulish' !important;
+body {
+  font-family: "mulish" !important;
 }
 
 .heading {
   text-align: center;
   background-color: lightgray;
   height: 56px;
+  font-size: 22px !important;
 }
 thead {
   font-size: 18px;
   background-color: gainsboro;
 }
-tbody{
-    font-size: 16px;
+tbody {
+  font-size: 16px;
 }
- input{
-    background-color: transparent !important;
-    border: 0px solid !important;
-}
-
-.red-color{
-    color: red;
-}
-.pink-color{
-    color: pink;
-}
-.orange-color{
-    color: orange;
-}
-.blue-color{
-    color: blue;
-}
-.green-color{
-    color: green;
-}
-.black-color{
-    color: black;
+input {
+  background-color: transparent !important;
+  border: 0px solid !important;
 }
 
-#eventTable{
-    width: 100%;
-    padding-top: 34px;
+.red-color {
+  color: #ff0000;
+}
+.pink-color {
+  color: #fe00ef;
+}
+.orange-color {
+  color: orange;
+}
+.blue-color {
+  color: #0000ff;
+}
+.green-color {
+  color: #005400;
+}
+.black-color {
+  color: black;
 }
 
-.dataTables_filter{
-    border: 1px solid black;
-
+#maintable {
+  width: 100%;
+  padding-top: 34px;
 }
 
-.dataTables_wrapper{
-    padding-top: 32px;
-} 
+.dataTables_filter {
+  border: 1px solid black;
+}
+
+.dataTables_wrapper {
+  padding-top: 32px;
+}
+.modal-body {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.modal-content {
+  color: #024a7a !important;
+}
+
+h1 {
+  text-align: center !important;
+  font-size: 20px !important;
+  position: absolute;
+  right: 360px;
+}

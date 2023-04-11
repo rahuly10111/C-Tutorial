@@ -23,7 +23,7 @@
         <div class="row  p-2 rounded heading ">
             <h2>Employee List</h2>
         </div>
-        <table id="eventTable" class="table cell-border rounded">
+        <table id="maintable" class="table cell-border rounded">
             <thead>
                 <tr>
                     <th class="text-center">#</th>
@@ -46,116 +46,43 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h1 class="modal-title fs-5 h1heading" id="exampleModalLabel"> <b>Employee Details </b> </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <p> <b>Name : </b> <span id="name"></span></p>
+                    <hr>
+                    <p> <b>Email : </b> <span id="email"></span></p>
+                    <hr>
+                    <p> <b>D.O.B : </b> <span id="dateofBirth"></span></p>
+                    <hr>
+                    <p> <b> Gender : </b> <span id="gender"></span></p>
+                    <hr>
+                    <p> <b>Designation : </b> <span id="designation"></span></p>
+                    <hr>
+                    <div class="row">
+                        <p class="col-2"> <b>State : </b> <span id="State"></span></p>
 
-                    <form>
-                        <div class="row mb-2">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Name : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Email : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="email">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">D.O.B : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="dateofBirth">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Gender : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="gender">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Designation : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="designation">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">State : </label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="State">
-                            </div>
+                        <p class="col-2"> <b>City : </b> <span id="city"></span></p>
 
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">City : </label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="city">
-                            </div>
+                        <p class="col-3"> <b>PostCode : </b> <span id="postcode"></span></p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <p class="col-3"> <b>Phone No : </b> <span id="phoneno"></span></p>
 
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">PostCode : </label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="postcode">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-1 col-form-label">Phone No : </label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="phoneno">
-                            </div>
+                        <p class="col-3"> <b> Department : </b> <span id="department"></span></p>
 
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Department : </label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="department">
-                            </div>
+                        <p class="col-3"> <b>Monthly Salary : </b> <span id="monthlysalary"></span></p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <p class="col-4"> <b>Date Of Joining : </b> <span id="doj"></span></p>
 
-                            <label for="inputPassword3" class="col-sm-1 col-form-label">Monthly Salary:</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="monthlysalary">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Date Of Joining : </label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="doj">
-                            </div>
-
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Total Experience : </label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="totalexp">
-                            </div>
-
-
-                        </div>
-                        <hr>
-                        <div class="row mb-2">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Remark</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="remark">
-                            </div>
-                        </div>
-                        <hr>
-                    </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        <p class="col-4"> <b> Total Experience : </b> <span id="totalexp"></span></p>
+                    </div>
+                    <hr>
+                    <p> <b>Remark : </b> <span id="remark"></span></p>
                 </div>
             </div>
         </div>
