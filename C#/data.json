@@ -1,0 +1,39 @@
+{
+  "states": [
+    {
+      "name": "California"
+    },
+    {
+      "name": "Texas"
+    },
+    {
+      "name": "New York"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Los Angeles",
+      "state": "California"
+    },
+    {
+      "name": "San Francisco",
+      "state": "California"
+    },
+    {
+      "name": "Houston",
+      "state": "Texas"
+    },
+    {
+      "name": "Dallas",
+      "state": "Texas"
+    },
+    {
+      "name": "New York City",
+      "state": "New York"
+    },
+    {
+      "name": "Buffalo",
+      "state": "New York"
+    }
+  ]
+}
